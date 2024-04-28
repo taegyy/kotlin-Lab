@@ -1,0 +1,24 @@
+package com.example.kotlinprac
+
+fun main(){
+    println("Hello! my name is ${name()}.")
+    println("I'm ${age()} years old.")
+    println("I live in ${lp()}.")
+    lang()
+}
+fun name():String{
+    return "LimTaeGyeong"
+}
+
+fun age():Int{
+    return 17
+}
+fun lp():String{
+    return "Cheongju"
+}
+fun lang(){
+    var l = arrayListOf("Kotlin","C","JAVA","Python","Dart","Swift","HTML","CSS")
+    for(i in l ){
+        println("I want to learn ${i}")
+    }
+}
