@@ -1,0 +1,77 @@
+package com.example.kotlinprac
+
+fun main(){
+        println(add(1,99999))
+        var a= "said \"hello\"."
+        var q="chip"
+        val gg = arrayOf(1,"h",0.9)
+        println(calling(a))
+        println("I like ${q}s")
+        println("I have 0\$")
+        println(comparing(9,88))
+        println(battery(99))
+        println(gg[0])
+        println(gg[1])
+        println(gg[2])
+        re()
+}
+//출력 연습
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
+
+fun calling(a:String) : String {
+    val v= "taegyeong "
+    return v+a
+}
+//조건문
+fun comparing(n:Int,m:Int)=if(n>m) n else m
+
+fun battery(ba:Int):String{
+    when(ba) {
+        0 -> return "off"
+        else -> return "on"
+    }
+}
+//배열&리스트
+fun array(){
+    val array = arrayOf(1,2,3)
+    val list = listOf(1,2,3)
+    val array2 = arrayOf(1,"h",0.9)
+    val list2 = listOf(1,"h",0.9)
+
+    array[3] = 99
+    //리스트-> 리스트의 원소(값)는 변경 X
+    //뮤터블(Mutable) 리스트-> 뮤터블 리스트이 값은 변경 O
+    var arrayList = arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList.add(100)
+}
+
+//반복문
+fun re() {
+    val language= arrayListOf("kotlin","C","java","dart","swift","python","HTML")
+    for(name in language){
+        println ("${name}")
+    }
+
+    //기본 for 반복
+    for(i in 1 ..10 ){
+        println("$i")
+    }
+    //i in 1 ..10 step n --> n만큼 뛰어 반복하기
+    //i in 10 downTo 1 --> 10부터 1까지 거꾸로 가기
+    //i in 1 until 100 --> 1부터 100"미만"까지 가기
+
+    //기본 while 반복
+    var index=0
+    while (index<10){
+        println("currunt index : ${index}")
+        index++
+    }
+    //응용
+    for((index,name)in language.withIndex()){ //withIndex()--> index,name을 동시에 사용 가능
+        println("${index+1}번째로 배울 언어는 ${name}")
+    }
+}
+
