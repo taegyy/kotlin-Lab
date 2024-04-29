@@ -1,0 +1,17 @@
+fun main(){
+  var q="chip"
+  println(add(1,99999))
+  var a= "said \"hello\"."
+  println("I like ${q}s") //괄호로 묶어서 변수 출력 가능
+  println("I have 0\$") // \로 $ 출력 가능
+}
+
+//출력 연습
+fun add(a:Int,b:Int):Int{
+    return a+b
+}
+
+fun calling(a:String) : String {
+    val v= "taegyeong "
+    return v+a
+}
