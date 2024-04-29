@@ -1,0 +1,32 @@
+package com.example.kotlinprac
+
+fun main(){
+    re()
+}
+
+//반복문
+fun re() {
+    val language= arrayListOf("kotlin","C","java","dart","swift","python","HTML")
+    for(name in language){
+        println ("${name}")
+    }
+
+    //기본 for 반복
+    for(i in 1 ..10 ){
+        println("$i")
+    }
+    //i in 1 ..10 step n --> n만큼 뛰어 반복하기
+    //i in 10 downTo 1 --> 10부터 1까지 거꾸로 가기
+    //i in 1 until 100 --> 1부터 100"미만"까지 가기
+
+    //기본 while 반복
+    var index=0
+    while (index<10){
+        println("currunt index : ${index}")
+        index++
+    }
+    //응용
+    for((index,name)in language.withIndex()){ //withIndex()--> index,name을 동시에 사용 가능
+        println("${index+1}번째로 배울 언어는 ${name}")
+    }
+}
