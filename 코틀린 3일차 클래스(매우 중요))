@@ -1,0 +1,36 @@
+package com.example.kotlinprac
+
+open class Human/*(constructor) --> 생략 가능*/ (val cake:String="cheeseCake"){
+    constructor(name: String,age:Int):this(name){
+        println("My name is ${name} and ${age} years old.")
+    }
+    //(val cake = cake) --> 생략 가능
+    fun eatingcake(){
+        println("Cake is yum")
+    }
+    init { //코드블럭(특정한 동작을 위해서 코드가 모여 있는 상태) 실행
+        println("Holy Moly")
+    }
+    open fun sing(){
+        println("lala")
+    }
+
+}
+class korean : Human(){ //-->Human 클래스를 open 해주며 상속받음
+    override fun sing(){ //-->얘도 sing을 open해서 override ㄱㄴ
+        super.sing()//-->override 하기 전 sing을 사용
+        println("LaLa")
+        println("My name is ${cake}") //--> Human을 상속 받았으므로 위에 디폴트로 넣어준 cheeseCake이 들어감.
+    }
+}
+
+fun main(){
+    val Human = Human("choco Cake")
+    val cakes = Human()
+    Human.eatingcake()
+    val me = Human("taegy",17)
+    println("My favorite cake is ${Human.cake}.")
+
+    val korean=korean()
+    korean.sing()
+}
