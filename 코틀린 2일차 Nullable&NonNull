@@ -1,0 +1,32 @@
+package com.example.kotlinprac
+
+fun main(){
+    nullcheck()
+    igNulls(str = "taegyeong")
+}
+
+//Nullable / NonNull
+fun nullcheck(){
+    //NPE :NUll pointer Exception
+    var name="taegy"
+    var nullname : String? = null //nullname에 null넣기
+    println(nullname)
+    var upper=name.toUpperCase()
+    var nullupper: String? = nullname?.toUpperCase()//null일 경우엔 그냥 반환, 아니면 touppercase실행
+
+    // ?: --> 존재유무를 판단하는 연산자
+
+    val lastname : String? = null
+    val fullname= name +" "+ (lastname?:"no lastname") //-->lastname이 null이 아닐경우 lastname 출력 아니면 no lastname 출력.
+    println(fullname)
+}
+
+//!! --> null이 입력되지 않는다고 선언
+fun igNulls(str : String?){  //--> 이 선언은 str에 null이 들어갈 수도 있음.
+    val noNull : String= str!! //--> 그러나, !!를 통해 str이 null이 아니라고 선언함.
+
+    val email : String? = "imtaegyeong2008@gmail.com"
+    email?.let{ //--> email이 null이 아니라면, email을 안으로 넣음.
+        println("My email is ${it}.") //--> it=email
+    }
+}
