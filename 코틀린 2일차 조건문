@@ -1,0 +1,16 @@
+package com.example.kotlinprac
+
+fun main(){
+    println(comparing(9,88))
+    println(battery(99))
+}
+
+//조건문
+fun comparing(n:Int,m:Int)=if(n>m) n else m
+
+fun battery(ba:Int):String{
+    when(ba) {
+        0 -> return "off"
+        else -> return "on"
+    }
+}
