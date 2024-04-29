@@ -1,0 +1,22 @@
+package com.example.kotlinprac
+
+fun main(){
+    array()
+}
+
+//배열&리스트
+fun array(){
+    val array = arrayOf(1,2,3)
+    val list = listOf(1,2,3)
+    val array2 = arrayOf(1,"h",0.9)
+    val list2 = listOf(1,"h",0.9)
+
+
+    //리스트-> 리스트의 원소(값)는 변경 X
+    //뮤터블(Mutable) 리스트-> 뮤터블 리스트이 값은 변경 O
+    var arrayList = arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList.add(100)
+    println(arrayList)
+    println(list2)
+}
