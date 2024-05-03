@@ -1,0 +1,52 @@
+package com.example.kotlinprac
+
+//Lamda
+// Lamda식은 우리가 마치 value처럼 다룰 수 있는 익명함수이다.
+//메소드의 매개변수 값으로 넘겨줄 수 있다. EX) fun maxby(a :Int)
+//return값으로 사용할 수 있다.
+
+//기본 정의
+//val (Lamda식 이름) : (타입)= {전달 인자(함수가 호출될때 제공되는 값)->실행할 코드}
+
+val square :(Int)->(Int)={num->num*num}
+
+val nameage={name : String, age : Int->
+    "My name is ${name} and I'm ${age} years old."
+}
+val lang : String.()->String = {
+    this+" is the most interesting computer language!"
+}
+fun ext(name :String, age : Int):String{
+    val intro: String.(Int) ->String = {"I am ${this} and ${it} years old."}
+    return name.intro(age)
+}
+val cal : (Int)->String={
+    when(it) {
+        in 0..40 -> "fail"
+        in 41..70 -> "pass"
+        in 71..100 -> "nice"
+        else -> "whatever"
+    }
+}
+//활용
+fun invoke(lamda:(Double) -> Boolean) : Boolean {
+    return lamda(7.7777)
+}
+
+
+fun main(){
+    println(square(9))
+    println(nameage("taegy",17))
+    println(lang("kotlin"))
+    println(ext("Lim taegyeong",17))
+    println(cal(100))
+
+
+    val lamda={number:Double->
+        number==7.7777
+    }
+    println(invoke(lamda))
+    println(invoke {it>99})
+
+}
+
